@@ -22,13 +22,17 @@
 				$res=$stm->get_result();
 				while ($resultado=$res->fetch_assoc())
 				{
+					echo '<a href="edit.php?filme='.$resultado['id_filme'].'">';
+					echo 'editar'.'</a>'.' ';
 					echo '<a href="filmes_show.php?filme='.$resultado['id_filme'].'">';
 					echo $resultado['titulo'];
-					echo '</a>';
+					echo '</a>';	
 					echo'<br>';
 				}
 				$stm->close();
 			?>
+			<br>
+			<a href="create.php">Criar um novo registo</a>
 		<br>
 		
 		</body>
