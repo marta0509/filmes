@@ -63,7 +63,7 @@ else
 	<html>
 	<head>
 		<meta charset="utf-8">
-		<title>Adcionar filmes</title>
+		<title>Adicionar filmes</title>
 	</head>
 	<body>
 		<h1>Adicionar filmes</h1>
