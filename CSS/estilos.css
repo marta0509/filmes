@@ -1,0 +1,49 @@
+/*Defenir tags HTML*/
+a{
+	color: red;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+h1{
+	font-family: helvetica,sans-serif;
+	font-size: 30px;
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+}
+
+/*Definir tag HTML e Classes*/
+
+h2.lead{
+	font-size: 24px;
+	background-color: #333333;
+	color: #ff0000;
+}
+
+/*Definir ID's*/
+
+#terceiro{
+	color: green;
+}
+
+#quarto{
+	color: blue;
+}
+
+#ligacao{
+	color: #333333;
+}
+
+#alteracor{
+	color: yellow;
+}
+
+/*Definir classes*/
+
+.ligacao{
+	font-size: 12px;
+	text-decoration: underline;
+}

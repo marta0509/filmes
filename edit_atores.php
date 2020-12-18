@@ -15,6 +15,7 @@
 			$stm=$con->prepare($sql);
 			if ($stm!=false)
 			{
+				echo "<h1 style='color:darkblue'>Editar atores</h1>";
 				$stm->bind_param("i",$ator);
 				$stm->execute();
 				$res=$stm->get_result();
@@ -27,18 +28,25 @@
 			<head>
 				<meta charset="utf-8">
 				<title>Editar ator</title>
+				<link href="CSS/bootstrap.min.css" rel="stylesheet" >
+				<link rel="stylesheet" href="CSS/jumbotrom.css">
+				<link rel="stylesheet" href="CSS/all.min.css">
 			</head>
-			<body>
+			<body style="background: #BFFAF7">
 				<form action="update_atores.php" method="post">
-					<label>Nome</label>
-					<input type="text" name="nome" required value="<?php echo $ator['nome'];?>"><br>
-					<label>data_nascimento</label>
-					<input type="text" name="data_nascimento" value="<?php echo $ator['data_nascimento'];?>"><br>
-					<label>nacionalidade</label>
-					<input type="text" name="nacionalidade" value="<?php echo $ator['nacionalidade'];?>"><br>
-					<input type="hidden" name="id_ator" value="<?php echo $ator['id_ator'];?>"><br>
+					<label><b>Nome</b></label>
+					<input class="form-control" type="text" name="nome" required value="<?php echo $ator['nome'];?>"><br>
+					<label><b>Data Nascimento</b></label>
+					<input class="form-control" type="text" name="data_nascimento" value="<?php echo $ator['data_nascimento'];?>"><br>
+					<label><b>Nacionalidade</b></label>
+					<input class="form-control" type="text" name="nacionalidade" value="<?php echo $ator['nacionalidade'];?>"><br>
+					<input class="form-control" type="hidden" name="id_ator" value="<?php echo $ator['id_ator'];?>"><br>
 					<input type="submit" name="enviar"><br>
 				</form>
+
+				<script src="JS/jquery-3.5.1.min.js"></script>
+				<script src="JS/bootstrap.min.js"></script>
+				<script src="JS/all.min.js"></script>
 			</body>
 			</html>
 			<?php 

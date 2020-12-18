@@ -45,8 +45,8 @@
 	<meta charset="utf-8">
 	<title>Detalhes</title>
 </head>
-<body>
-	<H1>Detalhes do ator</H1>
+<body style="background: #BFFAF7">
+	<H1 style="color: darkblue">Detalhes do ator</H1>
 	<?php
 		if (isset($ator)) {
 			echo "<br>";

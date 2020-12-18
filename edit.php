@@ -15,6 +15,7 @@
 			$stm=$con->prepare($sql);
 			if ($stm!=false)
 			{
+				echo "<h1 style='color:darkblue'>Editar filmes</h1>";
 				$stm->bind_param("i",$idFilme);
 				$stm->execute();
 				$res=$stm->get_result();
@@ -27,22 +28,29 @@
 			<head>
 				<meta charset="utf-8">
 				<title>Editar filme</title>
+				<link href="CSS/bootstrap.min.css" rel="stylesheet" >
+				<link rel="stylesheet" href="CSS/jumbotrom.css">
+				<link rel="stylesheet" href="CSS/all.min.css">
 			</head>
-			<body>
+			<body style="background: #BFFAF7">
 				<form action="update.php" method="post">
-					<label>Título</label>
-					<input type="text" name="titulo" required value="<?php echo $filme['titulo'];?>"><br>
-					<label>Sínopse</label>
-					<input type="text" name="sinopse" value="<?php echo $filme['sinopse'];?>"><br>
-					<label>Quantidade</label>
-					<input type="text" name="quantidade" value="<?php echo $filme['quantidade'];?>"><br>
-					<label>Idioma</label>
-					<input type="text" name="idioma" value="<?php echo $filme['idioma'];?>"><br>
-					<label>Data Lançamento</label>
-					<input type="date" name="data_lancamento" value="<?php echo $filme['data_lancamento'];?>"><br>
-					<input type="hidden" name="id_filme" value="<?php echo $filme['id_filme'];?>"><br>
+					<label><b>Título</b></label>
+					<input class="form-control" type="text" name="titulo" required value="<?php echo $filme['titulo'];?>"><br>
+					<label><b>Sínopse</b></label>
+					<input class="form-control" type="text" name="sinopse" value="<?php echo $filme['sinopse'];?>"><br>
+					<label><b>Quantidade</b></label>
+					<input class="form-control" type="text" name="quantidade" value="<?php echo $filme['quantidade'];?>"><br>
+					<label><b>Idioma</b></label>
+					<input class="form-control" type="text" name="idioma" value="<?php echo $filme['idioma'];?>"><br>
+					<label><b>Data Lançamento</b></label>
+					<input class="form-control" type="date" name="data_lancamento" value="<?php echo $filme['data_lancamento'];?>"><br>
+					<input class="form-control" type="hidden" name="id_filme" value="<?php echo $filme['id_filme'];?>"><br>
 					<input type="submit" name="enviar"><br>
 				</form>
+
+				<script src="JS/jquery-3.5.1.min.js"></script>
+				<script src="JS/bootstrap.min.js"></script>
+				<script src="JS/all.min.js"></script>
 			</body>
 			</html>
 			<?php 

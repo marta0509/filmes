@@ -54,19 +54,26 @@ else
 	<head>
 		<meta charset="utf-8">
 		<title>Adicionar Atores</title>
+		<link href="CSS/bootstrap.min.css" rel="stylesheet" >
+		<link rel="stylesheet" href="CSS/jumbotrom.css">
+		<link rel="stylesheet" href="CSS/all.min.css">
 	</head>
-	<body>
-		<h1>Adicionar atores</h1>
+	<body style="background: #BFFAF7">
+		<h1 style="color: darkblue">Adicionar atores</h1>
 		<form action="create_atores.php" method="post">
-			<label>Nome</label>
-			<input type="text" name="nome" required=""><br>
-			<label>Data Nascimento</label>
-			<input type="text" name="data_nascimento"><br>
-			<label>Nacionalidade</label>
-			<input type="text" name="nacionalidade"><br>
+			<label><b>Nome</b></label>
+			<input class="form-control" type="text" name="nome" required=""><br>
+			<label><b>Data Nascimento</b></label>
+			<input class="form-control" type="text" name="data_nascimento"><br>
+			<label><b>Nacionalidade</b></label>
+			<input class="form-control" type="text" name="nacionalidade"><br>
 		
 			<input type="submit" name="enviar"><br>
 		</form>
+
+		<script src="JS/jquery-3.5.1.min.js"></script>
+		<script src="JS/bootstrap.min.js"></script>
+		<script src="JS/all.min.js"></script>
 	</body>
 	</html>
 

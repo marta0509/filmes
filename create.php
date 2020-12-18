@@ -64,22 +64,29 @@ else
 	<head>
 		<meta charset="utf-8">
 		<title>Adicionar filmes</title>
+		<link href="CSS/bootstrap.min.css" rel="stylesheet" >
+		<link rel="stylesheet" href="CSS/jumbotrom.css">
+		<link rel="stylesheet" href="CSS/all.min.css">
 	</head>
-	<body>
-		<h1>Adicionar filmes</h1>
+	<body style="background: #BFFAF7">
+		<h1 style="color: darkblue">Adicionar filmes</h1>
 		<form action="create.php" method="post">
-			<label>Título</label>
-			<input type="text" name="titulo" required=""><br>
-			<label>Sínopse</label>
-			<input type="text" name="sinopse"><br>
-			<label>Quantidade</label>
-			<input type="text" name="quantidade"><br>
-			<label>Idioma</label>
-			<input type="text" name="idioma"><br>
-			<label>Data Lançamento</label>
-			<input type="date" name="data_lancamento"><br>
+			<label><b>Título</b></label>
+			<input class="form-control" type="text" name="titulo" required=""><br>
+			<label><b>Sínopse</b></label>
+			<input class="form-control" type="text" name="sinopse"><br>
+			<label><b>Quantidade</b></label>
+			<input class="form-control" type="text" name="quantidade"><br>
+			<label><b>Idioma</b></label>
+			<input class="form-control" type="text" name="idioma"><br>
+			<label><b>Data Lançamento</b></label>
+			<input class="form-control" type="date" name="data_lancamento"><br>
 			<input type="submit" name="enviar"><br>
 		</form>
+
+		<script src="JS/jquery-3.5.1.min.js"></script>
+		<script src="JS/bootstrap.min.js"></script>
+		<script src="JS/all.min.js"></script>
 	</body>
 	</html>
 

@@ -44,9 +44,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Detalhes</title>
+	<link href="CSS/bootstrap.min.css" rel="stylesheet" >
+	<link rel="stylesheet" href="CSS/jumbotrom.css">
+	<link rel="stylesheet" href="CSS/all.min.css">
 </head>
-<body>
-	<H1>Detalhes do filme</H1>
+<body style="background: #BFFAF7">
+	<H1 style="color: darkblue">Detalhes do filme</H1>
 	<?php
 		if (isset($filme)) {
 			echo "<br>";
@@ -66,5 +69,9 @@
 			echo "<h2>Parece que o filme selecionado não existe.<br>Continue a sua seleção.</h2>";
 		}
 	?>
+
+	<script src="JS/jquery-3.5.1.min.js"></script>
+	<script src="JS/bootstrap.min.js"></script>
+	<script src="JS/all.min.js"></script>
 </body>
 </html>

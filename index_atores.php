@@ -13,21 +13,27 @@
 		<head>
 			<meta charset="ISO-8859-1">
 			<title>Atores</title>
+			<link href="CSS/bootstrap.min.css" rel="stylesheet" >
+			<link rel="stylesheet" href="CSS/jumbotrom.css">
+			<link rel="stylesheet" href="CSS/all.min.css">
 		</head>
-		<body>
-			<h1>Lista de Atores</h1>
+		<body style="background: #BFFAF7">
+			<h1 style="color: darkblue">Lista de Atores</h1>
+			<br>
 			<?php
 				$stm=$con->prepare('select * from atores');
 				$stm->execute();
 				$res=$stm->get_result();
 				while ($resultado=$res->fetch_assoc())
 				{
-					echo '<a href="edit_atores.php?ator='.$resultado['id_ator'].'">';
-					echo 'editar'.'</a>'.' ';
-					echo '<a href="atores_show.php?ator='.$resultado['id_ator'].'">';
-					echo $resultado['nome'];
-					echo '</a>';	
-					echo'<br>';
+					echo '<a href="edit_atores.php?ator='.$resultado['id_ator'].'"><i style="color:blue" class="fas fa-pen"></i>';
+					echo '</a>'.' ';
+					echo '<a style="color:black" href="atores_show.php?ator='.$resultado['id_ator'].'"><i style="color:blue" class="far fa-eye"></i>';
+					echo '</a>'.' ';
+					echo '<i style="color:blue" class="fas fa-eraser"></i>';
+					echo '</a>'.' ';
+					echo '<b>'.$resultado['nome'].'</b>';
+					echo "<br>";
 				}
 				$stm->close();
 			?>
@@ -35,6 +41,9 @@
 			<a href="create_atores.php">Criar um novo registo</a>
 		<br>
 		
+		<script src="JS/jquery-3.5.1.min.js"></script>
+		<script src="JS/bootstrap.min.js"></script>
+		<script src="JS/all.min.js"></script>
 		</body>
 		</html>
 	<?php
