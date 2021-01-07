@@ -58,7 +58,7 @@
 				else
 				{
 					echo('<h1>Houve um erro ao processar o seu pedido.<br> Dentro de segundos será reencaminhado!</h1>');
-					header("refresh:5;url=index.php");
+					header("refresh:1;url=index.php");
 				}
 		}
 	
