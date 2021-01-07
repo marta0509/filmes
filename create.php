@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
 			echo '<script>alert("Filme adcionado com sucesso");</script>';
 			echo "Aguarde um momento. A reencaminhar página";
-			header("refresh:5;url=index.php");
+			header("refresh:1;url=index.php");
 		}
 	}
 }
