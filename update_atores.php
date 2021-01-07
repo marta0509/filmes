@@ -48,7 +48,7 @@
 
 				echo '<script>alert("Atores alterado com sucesso");</script>';
 				echo "Aguarde um momento. A reencaminhar página";
-				header("refresh:5;url=index_atores.php");
+				header("refresh:1;url=index_atores.php");
 			}
 			else
 			{
@@ -59,5 +59,5 @@
 	else
 	{
 		echo "<h1>Houve um erro ao processar o seu pedido!<br>Irá ser reencaminhado!</h1>";
-		header("refresh:5;url=index_atores.php");
+		header("refresh:1;url=index_atores.php");
 	}
