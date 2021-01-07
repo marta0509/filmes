@@ -4,7 +4,7 @@
 		if (!isset($_GET['ator']) || !is_numeric($_GET['ator'])) {
 			echo '<script>alert("Erro ao abrir Atores");</script>';
 			echo "Aguarde um momento. A reecaminhar página";
-			header("refresh:5;url=index_atores.php");
+			header("refresh:1;url=index_atores.php");
 			exit();		
 		}	
 		$ator=$_GET['ator'];
@@ -34,7 +34,7 @@
 			echo "<br>";
 			echo "Aguarde um momento. A reencaminhar página";
 			echo "<br>";
-			header("refresh:5; url=index_atores.php");
+			header("refresh:1; url=index_atores.php");
 		}
 	}
 }
