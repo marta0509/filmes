@@ -30,7 +30,7 @@
 					echo '</a>'.' ';
 					echo '<a style="color:black" href="atores_show.php?ator='.$resultado['id_ator'].'"><i style="color:blue" class="far fa-eye"></i>';
 					echo '</a>'.' ';
-					echo '<i style="color:blue" class="fas fa-eraser"></i>';
+					echo '<a href="delete_atores.php?ator='.$resultado['id_ator'].'"><i style="color:blue" class="fas fa-eraser"></i>';
 					echo '</a>'.' ';
 					echo '<b>'.$resultado['nome'].'</b>';
 					echo "<br>";
