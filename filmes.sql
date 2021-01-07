@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Dez-2020 às 13:25
+-- Generation Time: 07-Jan-2021 às 12:51
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -71,6 +71,29 @@ INSERT INTO `filmes` (`id_filme`, `titulo`, `sinopse`, `quantidade`, `idioma`, `
 (3, 'Pirates of the Caribbean:\r\nThe Curse of the Black Pearl', 'Enquanto o Governador Weatherby Swann e sua filha de 12 anos, Elizabeth Swann, estão velejando para Port Royal, Jamaica, o navio deles encontra um naufrágio com um único sobrevivente, um jovem chamado Will Turner. Elizabeth esconde um medalhão de ouro que o inconsciente Will estava usando, com medo de que isso o identificasse como um pirata. Ela tem um vislumbre de um navio pirata misterioso, o Pérola Negra.\r\n\r\nOito anos depois, James Norrington da Marinha Real Britânica é promovido a Comodoro. Ele pede a mão de Elizabeth em casamento. Antes dela responder, seu espartilho super apertado a faz desmaiar e cair na baía, onde ela afunda. Quando o medalhão que ele está usando chega ao fundo, ele emite um pulso.\r\n\r\nO pirata, Capitão Jack Sparrow, chega a Port Royal para comandar um navio. Ele resgata Elizabeth, porém Norrington reconhece Jack como um pirata e o prende. Jack, por um breve período, toma Elizabeth como refém para poder escapar, se escondendo em uma oficina de ferreiro, encontrando Will, agora um aprendiz de ferreiro. Jack fica inconsciente após uma luta e é preso, sentenciado a forca no dia seguinte. Naquela noite, Port Royal é sitiada pelo Pérola Negra, respondendo ao pulso do medalhão. Elizabeth é capturada e invoca seu direito de falar com o capitão. Ela mente para o Capitão Hector Barbossa, dizendo que seu sobrenome era Turner. Ela negocia o cessar fogo a Port Royal em troca do medalhão.', 1, 'ingles', NULL),
 (7, 'Home Alone', 'Home Alone ? um filme de com?dia de Natal estadunidense de 1990, escrito e produzido por John Hughes e dirigido por Chris Columbus. O filme ? estrelado por Macaulay Culkin como Kevin McCallister, um menino de 8 anos que ? erroneamente deixado para tr?s quando sua fam?lia voa para Paris para suas f?rias de Natal. Kevin inicialmente aprecia estar sozinho em casa, mas logo tem que lidar com dois ladr?es, interpretados por Joe Pesci e Daniel Stern. O filme tamb?m apresenta John Heard e Catherine O\'Hara como os pais de Kevin.', 10, 'InglÃªs', '1960-11-13');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `realizadores`
+--
+
+CREATE TABLE `realizadores` (
+  `id_realizador` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `nacionalidade` varchar(20) NOT NULL,
+  `data_nascimento` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `realizadores`
+--
+
+INSERT INTO `realizadores` (`id_realizador`, `nome`, `nacionalidade`, `data_nascimento`) VALUES
+(1, 'Barry Sonnenfeld', 'Americano', '1953-04-01'),
+(3, 'John G. Avildsen', 'Americano', '1935-12-21'),
+(4, 'Gore Verbinski', 'Americano', '1964-03-16'),
+(5, 'Chris Columbus', 'Americano', '1958-09-10');
+
 --
 -- Indexes for dumped tables
 --
@@ -88,6 +111,12 @@ ALTER TABLE `filmes`
   ADD PRIMARY KEY (`id_filme`);
 
 --
+-- Indexes for table `realizadores`
+--
+ALTER TABLE `realizadores`
+  ADD PRIMARY KEY (`id_realizador`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -102,6 +131,12 @@ ALTER TABLE `atores`
 --
 ALTER TABLE `filmes`
   MODIFY `id_filme` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `realizadores`
+--
+ALTER TABLE `realizadores`
+  MODIFY `id_realizador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
