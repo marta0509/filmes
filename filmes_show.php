@@ -4,7 +4,7 @@
 		if (!isset($_GET['filme']) || !is_numeric($_GET['filme'])) {
 			echo '<script>alert("Erro ao abrir Filme");</script>';
 			echo "Aguarde um momento. A reecaminhar página";
-			header("refresh:5;url=index.php");
+			header("refresh:1;url=index.php");
 			exit();		
 		}	
 		$idFilme=$_GET['filme'];
@@ -34,7 +34,7 @@
 			echo "<br>";
 			echo "Aguarde um momento. A reencaminhar página";
 			echo "<br>";
-			header("refresh:5; url=index.php");
+			header("refresh:1; url=index.php");
 		}
 	}
 }
