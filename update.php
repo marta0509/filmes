@@ -57,7 +57,7 @@
 
 				echo '<script>alert("Filme alterado com sucesso");</script>';
 				echo "Aguarde um momento. A reencaminhar página";
-				header("refresh:5;url=index.php");
+				header("refresh:1;url=index.php");
 			}
 			else
 			{
@@ -68,5 +68,5 @@
 	else
 	{
 		echo "<h1>Houve um erro ao processar o seu pedido!<br>Irá ser reencaminhado!</h1>";
-		header("refresh:5;url=index.php");
+		header("refresh:1;url=index.php");
 	}
