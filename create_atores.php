@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 
 			echo '<script>alert("Ator adcionado com sucesso");</script>';
 			echo "Aguarde um momento. A reencaminhar página";
-			header("refresh:5;url=index_atores.php");
+			header("refresh:1;url=index_atores.php");
 		}
 	}
 }
@@ -64,7 +64,7 @@ else
 			<label><b>Nome</b></label>
 			<input class="form-control" type="text" name="nome" required=""><br>
 			<label><b>Data Nascimento</b></label>
-			<input class="form-control" type="text" name="data_nascimento"><br>
+			<input class="form-control" type="date" name="data_nascimento"><br>
 			<label><b>Nacionalidade</b></label>
 			<input class="form-control" type="text" name="nacionalidade"><br>
 		
