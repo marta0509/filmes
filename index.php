@@ -28,9 +28,11 @@
 				{
 					echo '<a href="edit.php?filme='.$resultado['id_filme'].'"><i style="color:blue" class="fas fa-pen" ></i>';
 					echo '</a>'.' ';
-					echo '<a style="color:black" href="filmes_show.php?filme='.$resultado['id_filme'].'">';
-					echo $resultado['titulo'];
-					echo '</a>';	
+					echo '<a style="color:black" href="filmes_show.php?filme='.$resultado['id_filme'].'"><i style="color:blue" class="far fa-eye"></i>';
+					echo '</a>';
+					echo '<a style="color:black" href="delete.php?filme='.$resultado['id_filme'].'"><i style="color:blue" class="fas fa-eraser"></i>';
+					echo '</a>'.' ';
+					echo $resultado['titulo'];	
 					echo'<br>';
 				}
 				$stm->close();
