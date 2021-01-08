@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 07-Jan-2021 às 12:51
+-- Generation Time: 08-Jan-2021 às 13:20
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -94,6 +94,26 @@ INSERT INTO `realizadores` (`id_realizador`, `nome`, `nacionalidade`, `data_nasc
 (4, 'Gore Verbinski', 'Americano', '1964-03-16'),
 (5, 'Chris Columbus', 'Americano', '1958-09-10');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `utilizadores`
+--
+
+CREATE TABLE `utilizadores` (
+  `id` bigint(20) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `utilizadores`
+--
+
+INSERT INTO `utilizadores` (`id`, `nome`, `user_name`, `password`) VALUES
+(1, 'Marta', 'marta', '1234');
+
 --
 -- Indexes for dumped tables
 --
@@ -117,6 +137,12 @@ ALTER TABLE `realizadores`
   ADD PRIMARY KEY (`id_realizador`);
 
 --
+-- Indexes for table `utilizadores`
+--
+ALTER TABLE `utilizadores`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -137,6 +163,12 @@ ALTER TABLE `filmes`
 --
 ALTER TABLE `realizadores`
   MODIFY `id_realizador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `utilizadores`
+--
+ALTER TABLE `utilizadores`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
