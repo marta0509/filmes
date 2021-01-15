@@ -5,7 +5,12 @@ if (!isset($_SESSION['login']))
 	$_SESSION['login']="incorreto";
 }
 if($_SESSION['login']=="correto"&&isset($_SESSION['login']))
-{
+{		
+		$utilizador=$_GET['utilizador'];
+			if ($_SESSION['utilizador']!=$utilizador) {
+				echo "Nao tem permição";
+				exit;
+			}
 		$con=new mysqli("localhost","root","","filmes");
 		if($con->connect_errno!=0)
 		{
@@ -14,17 +19,15 @@ if($_SESSION['login']=="correto"&&isset($_SESSION['login']))
 		}
 		else
 		{
-	?>
-			<?php
 			if ($_SERVER['REQUEST_METHOD']=="GET") 
 			{
-				if (!isset($_GET['ator']) || !is_numeric($_GET['ator'])) {
-					echo '<script>alert("Erro ao abrir Atores");</script>';
+				if (!isset($_GET['utilizador']) || !is_numeric($_GET['utilizador'])) {
+					echo '<script>alert("Erro ao abrir utilizadores");</script>';
 					echo "Aguarde um momento. A reecaminhar página";
-					header("refresh:1;url=index_atores.php");
+					header("refresh:1;url=index_utilizadores.php");
 					exit();		
 				}	
-				$ator=$_GET['ator'];
+				$ator=$_GET['utilizador'];
 				$con=new mysqli("localhost","root","","filmes");
 
 				if ($con->connect_errno!=0)
@@ -34,14 +37,14 @@ if($_SESSION['login']=="correto"&&isset($_SESSION['login']))
 				}
 				else
 				{
-					$sql='select * from atores where id_ator=?';
+					$sql='select * from utilizadores where id=?';
 					$stm =$con->prepare($sql);
 					if ($stm!=false)
 					{
-						$stm->bind_param('i',$ator);
+						$stm->bind_param('i',$utilizador);
 						$stm->execute();
 						$res=$stm->get_result();
-						$ator=$res->fetch_assoc();
+						$utilizador=$res->fetch_assoc();
 						$stm->close();
 					}
 				else
@@ -51,7 +54,7 @@ if($_SESSION['login']=="correto"&&isset($_SESSION['login']))
 					echo "<br>";
 					echo "Aguarde um momento. A reencaminhar página";
 					echo "<br>";
-					header("refresh:1; url=index_atores.php");
+					header("refresh:1; url=index_utilizadores.php");
 				}
 			}
 		}
@@ -63,23 +66,24 @@ if($_SESSION['login']=="correto"&&isset($_SESSION['login']))
 			<title>Detalhes</title>
 		</head>
 		<body style="background: #BFFAF7">
-			<H1 style="color: darkblue">Detalhes do ator</H1>
+			<H1 style="color: darkblue">Detalhes do utilizador</H1>
 			<?php
-				if (isset($ator)) {
+				if (isset($utilizador)) {
 					echo "<br>";
 					echo "<b>Nome:</b>";
-					echo $ator['nome'];
+					echo $utilizador['nome'];
 					echo "<br>";
-					echo "<b>Data de Nascimento:</b>";
-					echo ($ator['data_nascimento']);
+					echo "<b>User name:</b>";
+					echo $utilizador['user_name'];
 					echo "<br>";
-					echo "<b>Nacionalidade:</b>";
-					echo $ator['nacionalidade'];
+					echo "<b>Password:</b>";
+					echo $utilizador['password'];
 					echo "<br>";
 				}
 				else
 				{
-					echo "<h2>Parece que o ator selecionado não existe.<br>Continue a sua seleção.</h2>";
+					echo "<h2>Parece que o utilizador selecionado não existe.<br>Continue a sua seleção.</h2>";
+					header('refresh:3;url=index_utilizadores.php');
 				}
 			?>
 		</body>

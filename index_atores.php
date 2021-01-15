@@ -66,3 +66,5 @@ else
 ?>
 <br>
 <a href="processa_logout.php">Sair</a>
+<br>
+<a href="index.php">Inicio</a>

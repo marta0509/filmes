@@ -70,14 +70,19 @@ if($_SESSION['login']=="correto"&&isset($_SESSION['login']))
 			<?php
 				if (isset($filme)) {
 					echo "<br>";
+					echo "<b>Ttulo:</b>";
 					echo $filme['titulo'];
 					echo "<br>";
+					echo "<b>Sinopse:</b>";
 					echo utf8_encode($filme['sinopse']);
 					echo "<br>";
+					echo "<b>Data de Lançamento:</b>";
 					echo $filme['data_lancamento'];
 					echo "<br>";
+					echo "<b>Idioma:</b>";
 					echo $filme['idioma'];
 					echo "<br>";
+					echo "<b>Quantidade:</b>";
 					echo $filme['quantidade'];
 					echo "<br>";
 				}

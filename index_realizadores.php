@@ -46,6 +46,7 @@ if($_SESSION['login']=="correto"&&isset($_SESSION['login']))
 			?>
 			<br>
 			<a href="create_realizadores.php">Criar um novo registo</a>
+
 		<br>
 		
 		<script src="JS/jquery-3.5.1.min.js"></script>
@@ -67,3 +68,5 @@ else
 ?>
 <br>
 <a href="processa_logout.php">Sair</a>
+<br>
+<a href="index.php">Inicio</a>

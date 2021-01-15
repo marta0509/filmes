@@ -67,10 +67,13 @@ if($_SESSION['login']=="correto"&&isset($_SESSION['login']))
 			<?php
 				if (isset($realizador)) {
 					echo "<br>";
+					echo "<b>Nome:</b>";
 					echo $realizador['nome'];
 					echo "<br>";
+					echo "<b>Data De Nascimento:</b>";
 					echo ($realizador['data_nascimento']);
 					echo "<br>";
+					echo "<b>Nacionalidade:</b>";
 					echo $realizador['nacionalidade'];
 					echo "<br>";
 				}

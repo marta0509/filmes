@@ -19,34 +19,33 @@ if($_SESSION['login']=="correto"&&isset($_SESSION['login']))
 			<html>
 			<head>
 				<meta charset="ISO-8859-1">
-				<title>Filmes</title>
+				<title>Utilizadores</title>
 				<link href="CSS/bootstrap.min.css" rel="stylesheet" >
 				<link rel="stylesheet" href="CSS/jumbotrom.css">
 				<link rel="stylesheet" href="CSS/all.min.css">
 			</head>
 			<body style="background: #BFFAF7">
-				<h1 style="color: darkblue">Lista de Filmes</h1>
+				<h1 style="color: darkblue">Lista de Utilizadores</h1>
 				<br>
 				<?php
-					$stm=$con->prepare('select * from filmes');
+					$stm=$con->prepare('select * from utilizadores');
 					$stm->execute();
 					$res=$stm->get_result();
 					while ($resultado=$res->fetch_assoc())
 					{
-						echo '<a href="edit.php?filme='.$resultado['id_filme'].'"><i style="color:blue" class="fas fa-pen" ></i>';
+						echo '<a href="edit_utilizadores.php?utilizador='.$resultado['id'].'"><i style="color:blue" class="fas fa-pen" ></i>';
 						echo '</a>'.' ';
-						echo '<a style="color:black" href="filmes_show.php?filme='.$resultado['id_filme'].'"><i style="color:blue" class="far fa-eye"></i>';
+						echo '<a style="color:black" href="utilizadores_show.php?utilizador='.$resultado['id'].'"><i style="color:blue" class="far fa-eye"></i>';
 						echo '</a>';
-						echo '<a style="color:black" href="delete.php?filme='.$resultado['id_filme'].'"><i style="color:blue" class="fas fa-eraser"></i>';
+						echo '<a style="color:black" href="delete_utilizadores.php?utilizador='.$resultado['id'].'"><i style="color:blue" class="fas fa-eraser"></i>';
 						echo '</a>'.' ';
-						echo $resultado['titulo'];	
+						echo $resultado['nome'];	
 						echo'<br>';
 					}
 					$stm->close();
 				?>
 				<br>
-				<a href="create.php">Criar um novo registo</a>
-				
+				<a href="create_utilizadores.php">Criar um novo utilizador</a>
 			<br>
 			
 				<script src="JS/jquery-3.5.1.min.js"></script>
